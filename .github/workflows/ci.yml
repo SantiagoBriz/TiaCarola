@@ -8,6 +8,9 @@ on:
     branches: [dev, staging, main]
   push:
     branches: [dev, staging, main]
+  # Disparo manual desde la pestana Actions o con `gh workflow run CI`.
+  # Sirve para re-correr el pipeline sin tener que pushear un commit.
+  workflow_dispatch:
 
 # Si se pushean commits nuevos a un PR, cancela la corrida anterior en vez de
 # encolar las dos. En main no se cancela: interesa el historial completo.
