@@ -1,0 +1,53 @@
+name: CI
+
+# Corre en cada PR hacia las tres ramas del flujo, y ademas en los push
+# directos a esas ramas (que solo ocurren al mergear un PR): asi queda
+# registrado que la rama de destino sigue verde despues del merge.
+on:
+  pull_request:
+    branches: [dev, staging, main]
+  push:
+    branches: [dev, staging, main]
+
+# Si se pushean commits nuevos a un PR, cancela la corrida anterior en vez de
+# encolar las dos. En main no se cancela: interesa el historial completo.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Lint, tipos y build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # `npm ci` en vez de `npm install`: instala exactamente lo que dice
+      # package-lock.json y falla si el lock quedo desincronizado.
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Formato (Prettier)
+        run: npm run format:check
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      # Corre `next typegen` antes de tsc: los tipos de rutas de Next 16 se
+      # generan y en un clon limpio como este todavia no existen.
+      - name: Tipos (TypeScript)
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
