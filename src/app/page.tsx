@@ -1,11 +1,33 @@
+import { Activities } from "@/components/Activities";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { Gallery } from "@/components/Gallery";
+import { Hero } from "@/components/Hero";
+import { Location } from "@/components/Location";
+import { Nav } from "@/components/Nav";
+import { Services } from "@/components/Services";
+import { Stats } from "@/components/Stats";
+import { Story } from "@/components/Story";
+import { Testimonials } from "@/components/Testimonials";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+
 export default function HomePage() {
   return (
-    <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center gap-4 px-6 py-16">
-      <h1 className="text-4xl font-semibold tracking-tight">Tía Carola</h1>
-      <p className="text-lg text-black/70 dark:text-white/70">
-        Hospedaje familiar en San Francisco, Valle Grande, Jujuy.
-      </p>
-      <p className="text-sm text-black/50 dark:text-white/50">Sitio en construcción.</p>
-    </main>
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Stats />
+        <Story />
+        <Services />
+        <Gallery />
+        <Activities />
+        <Testimonials />
+        <Location />
+        <Contact />
+      </main>
+      <Footer />
+      <WhatsAppFloat />
+    </>
   );
 }
