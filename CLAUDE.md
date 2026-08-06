@@ -28,4 +28,5 @@ feature/nombre-descriptivo → dev → staging → main
 5. **PRs hacia `dev`**: GitHub pone `main` como base por defecto — hay que cambiar la base explícitamente (`gh pr create --base dev`).
 6. **Promover a staging** = PR de `dev` → `staging`. **Promover a prod** = PR de `staging` → `main`. Nunca al revés.
 7. **Hotfix urgente de producción**: rama desde `main` → PR a `main` → después propagar el mismo cambio hacia atrás a `staging` y `dev`.
-8. **Si no está claro desde qué rama partir, preguntar antes de asumir.**
+8. **Nunca borrar ramas**, ni siquiera una `feature/*` ya mergeada, ni local ni en el remoto. Tampoco sugerirlo.
+9. **Si no está claro desde qué rama partir, preguntar antes de asumir.**
