@@ -1,12 +1,15 @@
 /**
  * Contenido del sitio, en un solo lugar.
  *
- * Todo el texto y las imagenes de la landing salen de aca. La idea es que se
- * pueda actualizar el sitio sin tocar ningun componente.
+ * Todo el texto, las citas y las fotos de la landing salen de aca. La idea es
+ * poder actualizar el sitio sin tocar ningun componente.
  *
- * TODO(contenido): las fotos son placeholders de Unsplash. Cuando esten las
- * reales, ponerlas en `public/fotos/` y cambiar las rutas por `/fotos/...`.
- * Ahi tambien se puede sacar `remotePatterns` de `next.config.ts`.
+ * Los datos del hospedaje (direccion, fundacion, habitaciones, contacto) y las
+ * citas son reales. Las fuentes estan indicadas en cada bloque.
+ *
+ * TODO(contenido): las fotos son placeholders de Unsplash y los testimonios
+ * vienen de TripAdvisor, no son material propio de la familia. Reemplazar por
+ * fotos y testimonios propios antes de publicar. Ver `TempContentNotice`.
  */
 
 export type Photo = {
@@ -15,19 +18,20 @@ export type Photo = {
 };
 
 export type Service = {
-  /** Nombre del icono definido en `components/ServiceIcon.tsx`. */
+  /** Nombre del icono definido en `components/icons.tsx`. */
   icon: ServiceIconName;
   title: string;
   description: string;
 };
 
 export type ServiceIconName =
-  "cama" | "desayuno" | "wifi" | "corazon" | "ubicacion" | "casa" | "ropa" | "estrella";
+  "cama" | "desayuno" | "wifi" | "corazon" | "fuego" | "ubicacion" | "ropa" | "arbol";
 
 export type StoryChapter = {
   eyebrow: string;
   title: string;
   body: string;
+  quote?: { text: string; author: string };
   photo: Photo;
   /** Firma manuscrita al pie del capitulo. */
   signature?: string;
@@ -43,15 +47,20 @@ export type Testimonial = {
   quote: string;
   author: string;
   from: string;
-  rating: number;
+  date: string;
+  source: string;
 };
 
 export const site = {
   name: "Tía Carola",
   tagline: "Hospedaje rural familiar en las Yungas jujeñas",
   location: "San Francisco, Valle Grande, Jujuy",
+  address: "El Churqui s/n, San Francisco, Valle Grande, Jujuy",
+  addressDetail: "Dentro del predio municipal, frente a la antena de telefonía móvil.",
+  foundedYear: 1996,
+  owners: "Lucy Sánchez y Freddy Vera",
   description:
-    "Hospedaje familiar en San Francisco, Valle Grande, Jujuy. Atendido por Lucy y Fredy.",
+    "Hospedaje familiar en San Francisco, Valle Grande, Jujuy. Atendido por Lucy y Freddy desde 1996.",
 } as const;
 
 export const nav = [
@@ -63,10 +72,10 @@ export const nav = [
 ] as const;
 
 export const hero = {
-  eyebrow: "San Francisco, Valle Grande · Yungas jujeñas",
+  eyebrow: "San Francisco, Valle Grande · Yungas jujeñas · Desde 1996",
   title: "Un hogar en medio de la selva, con el trato de siempre",
   subtitle:
-    "Hace más de diez años que Tía Carola recibe viajeros en su casa, entre la neblina y el verde profundo de las Yungas.",
+    "Desde 1996, Lucy y Freddy reciben viajeros en su casa de adobe, entre la neblina y el verde profundo de las Yungas.",
   photo: {
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1800&auto=format&fit=crop",
     alt: "Río entre la vegetación densa de las Yungas",
@@ -74,39 +83,55 @@ export const hero = {
 } satisfies { eyebrow: string; title: string; subtitle: string; photo: Photo };
 
 export const stats = [
-  { value: "+10", label: "años recibiendo viajeros" },
-  { value: "100%", label: "atención familiar" },
-  { value: "5★", label: "valoración de huéspedes" },
-  { value: "4", label: "generaciones en esta casa" },
+  { value: "1996", label: "año de fundación" },
+  { value: "4", label: "habitaciones con baño privado" },
+  { value: "13", label: "plazas, más espacio para carpas" },
+  { value: "4.3★", label: "valoración de viajeros" },
 ] as const;
 
+/**
+ * Las citas de Lucy son de una nota de El Tribuno de Jujuy; la de Marcelo C.
+ * es de TripAdvisor. Se transcriben textuales.
+ */
 export const story = {
   eyebrow: "Nuestra historia",
-  title: "La casa que mi abuela convirtió en refugio",
+  title: "La casa que Lucy y Freddy abrieron al camino",
   subtitle: "Tres momentos que explican por qué venir a Tía Carola se siente distinto.",
   chapters: [
     {
       eyebrow: "Los comienzos",
-      title: "Una casa de familia, abierta de a poco",
-      body: "La casa donde hoy funciona Tía Carola fue construida por mis bisabuelos hace más de setenta años, con madera y piedra del monte. Con el tiempo, mi abuela empezó a recibir a los primeros viajeros que se perdían buscando las cascadas de la zona y terminaban golpeando su puerta pidiendo un lugar donde dormir.",
+      title: "Vinieron a pasear y se quedaron para siempre",
+      body: "En 1996, Lucy Sánchez —docente jubilada— y Freddy Vera —ex mecánico dental— llegaron de paseo a San Francisco. En un mes ya eran dueños del terreno donde hoy está la casa.",
+      quote: {
+        text: "Nosotros vinimos a pasear y conocer cuando me jubilé, en el año 96. Llegamos y a los 15 días volvimos, y a los 30 días éramos propietarios de este terreno porque el dueño quiso venderlo por un gasto que tenía que cubrir en ese momento.",
+        author: "Lucy Sánchez",
+      },
       photo: {
         src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
         alt: "Casa familiar rodeada de vegetación",
       },
     },
     {
-      eyebrow: "La cocina de Carola",
-      title: "El desayuno que todos recuerdan",
-      body: "Cada mañana empieza igual: pan casero recién horneado, dulces hechos en la casa y el mate cebado por mi abuela mientras cuenta alguna historia del pueblo. No hay dos desayunos iguales, porque todo depende de lo que haya en la huerta ese día.",
+      eyebrow: "La cocina de la casa",
+      title: "Comida casera en medio de la selva",
+      body: "La casa de adobe original conserva el horno de barro, y de esa cocina salen los platos que los viajeros recuerdan años después.",
+      quote: {
+        text: "En un punto elevado y bello del lugar está la hostería y restaurante Tía Carola, de Lucy y Freddy, encantadores anfitriones que nos obsequiaron con unos sorrentinos gourmet que bien podrían figurar en el menú de un restaurant de alto nivel.",
+        author: "Marcelo C., Buenos Aires",
+      },
       photo: {
         src: "https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=900&auto=format&fit=crop",
-        alt: "Mesa servida con desayuno casero",
+        alt: "Mesa servida con comida casera",
       },
     },
     {
       eyebrow: "Hoy",
-      title: "Cuatro generaciones, la misma calidez",
-      body: "Hoy seguimos recibiendo viajeros como si fueran de la familia. No hay recepción ni check-in automático, hay charla, mate y un cuarto preparado con cariño. Eso es lo que mi abuela siempre quiso que sintiera cada persona que se queda en esta casa.",
+      title: "Nuestra casa, compartida con la gente",
+      body: "Casi treinta años después, la idea sigue siendo la misma: acá no hay recepción ni check-in automático, hay una casa de familia que se abre.",
+      quote: {
+        text: "El objetivo de Tía Carola es ese, nunca ha sido un emprendimiento donde haya una diferencia entre la persona que viene a hospedarse y nosotros. La idea es nuestra casa compartida con la gente.",
+        author: "Lucy Sánchez",
+      },
       photo: {
         src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=900&auto=format&fit=crop",
         alt: "Habitación cálida con detalles de madera",
@@ -127,23 +152,28 @@ export const services = {
   items: [
     {
       icon: "cama",
-      title: "Habitaciones con baño privado",
-      description: "Cómodas, cálidas y pensadas para descansar.",
+      title: "4 habitaciones con baño privado",
+      description: "13 plazas en total, más espacio para carpas.",
     },
     {
       icon: "desayuno",
       title: "Desayuno incluido",
-      description: "Casero, con productos de la huerta y la zona.",
+      description: "Casero, para arrancar el día antes de salir a caminar.",
     },
     {
       icon: "wifi",
-      title: "Wi-Fi en toda la casa",
-      description: "Conexión disponible para quien la necesite.",
+      title: "Wi-Fi y calefacción",
+      description: "Conexión y abrigo, que en las Yungas se agradecen.",
     },
     {
       icon: "corazon",
-      title: "Atención personalizada",
-      description: "Te recibimos como en casa, desde el primer mensaje.",
+      title: "Atención de Lucy y Freddy",
+      description: "Los dueños te reciben en persona, como en casa.",
+    },
+    {
+      icon: "fuego",
+      title: "Fogón y quincho",
+      description: "Espacios para compartir después de la caminata.",
     },
     {
       icon: "ubicacion",
@@ -151,19 +181,14 @@ export const services = {
       description: "Te ayudamos a planear cada paseo por la zona.",
     },
     {
-      icon: "casa",
-      title: "Ambiente familiar",
-      description: "Tranquilidad, trato cercano y mucha historia.",
-    },
-    {
       icon: "ropa",
       title: "Ropa blanca",
       description: "Sábanas y toallas siempre impecables.",
     },
     {
-      icon: "estrella",
-      title: "Espacios para descansar",
-      description: "Galerías, patios y rincones con vista a la selva.",
+      icon: "arbol",
+      title: "Parral y horno de barro",
+      description: "En la casa de adobe original, todavía en uso.",
     },
   ],
 } satisfies { eyebrow: string; title: string; items: Service[] };
@@ -178,7 +203,7 @@ export const gallery = {
     },
     {
       src: "https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=700&auto=format&fit=crop",
-      alt: "Desayuno casero servido en la mesa",
+      alt: "Comida casera servida en la mesa",
     },
     {
       src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=700&auto=format&fit=crop",
@@ -190,7 +215,7 @@ export const gallery = {
     },
     {
       src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=900&auto=format&fit=crop",
-      alt: "Terraza con vista a la selva",
+      alt: "Galería con vista a la selva",
     },
     {
       src: "https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?q=80&w=700&auto=format&fit=crop",
@@ -225,16 +250,16 @@ export const activities = {
       },
     },
     {
-      title: "Senderismo en las Yungas",
-      description: "Caminatas guiadas y paisajes increíbles.",
+      title: "Cascada La Toma",
+      description: "Una caminata corta hasta el salto de agua.",
       photo: {
         src: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop",
         alt: "Sendero de montaña entre la vegetación",
       },
     },
     {
-      title: "Observación de aves",
-      description: "Gran diversidad de especies autóctonas.",
+      title: "Pueblo de San Francisco",
+      description: "La vida cotidiana de un pueblo de las Yungas.",
       photo: {
         src: "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=800&auto=format&fit=crop",
         alt: "Ave posada en una rama",
@@ -249,9 +274,11 @@ export const activities = {
 };
 
 /**
- * TODO(comentarios): estos testimonios son de ejemplo y estan hardcodeados.
- * Cuando este Supabase, la seccion pasa a leer de la tabla `comments`
- * filtrando por `status = 'approved'`.
+ * Resenas publicas de TripAdvisor, transcriptas textuales.
+ *
+ * TODO(comentarios): cuando este Supabase, esta seccion pasa a leer de la
+ * tabla `comments` filtrando por `status = 'approved'`, y estas resenas se
+ * reemplazan por testimonios propios.
  */
 export const testimonials = {
   eyebrow: "Testimonios",
@@ -259,24 +286,27 @@ export const testimonials = {
   items: [
     {
       quote:
-        "Nos sentimos en casa desde el primer minuto. La comida y la calidez de Carola no se olvidan.",
-      author: "María José",
+        "En un punto elevado y bello del lugar está la hostería y restaurante Tía Carola, de Lucy y Freddy, encantadores anfitriones que nos obsequiaron con unos sorrentinos gourmet que bien podrían figurar en el menú de un restaurant de alto nivel.",
+      author: "Marcelo C.",
       from: "Buenos Aires",
-      rating: 5,
+      date: "mayo de 2019",
+      source: "TripAdvisor",
     },
     {
       quote:
-        "El lugar perfecto para desconectar. Senderos increíbles y la mejor base para visitar las Termas del Jordán.",
-      author: "Lucas y Sofía",
-      from: "Córdoba",
-      rating: 5,
+        "Tres días y dos noches soñadas. Excelentes hospedajes, exquisita comida en Tía Carola. Maravillosos paisajes, clima ideal para descansar.",
+      author: "Stella Maris A.",
+      from: "",
+      date: "marzo de 2019",
+      source: "TripAdvisor",
     },
     {
       quote:
-        "Nunca había visto una selva así en Jujuy. Un descubrimiento total, y el trato familiar lo hizo inolvidable.",
-      author: "Pedro",
-      from: "Salta",
-      rating: 5,
+        "Nos alojamos en San Francisco para poder recorrerlo. El lugar es privilegiado, muy tranquilo. Estuvimos en un lugar llamado Tía Carola, que fue excelente.",
+      author: "Florencia B.",
+      from: "Provincia de Buenos Aires",
+      date: "junio de 2016",
+      source: "TripAdvisor",
     },
   ],
 } satisfies { eyebrow: string; title: string; items: Testimonial[] };
@@ -284,30 +314,28 @@ export const testimonials = {
 export const location = {
   eyebrow: "Cómo llegar",
   title: "San Francisco, Valle Grande",
-  cardTitle: "A pocos minutos de la selva y las cascadas",
-  body: "Estamos en San Francisco, Valle Grande, dentro de las Yungas jujeñas. A poca distancia de senderos, cascadas y del Parque Nacional Calilegua, en un entorno húmedo y verde muy distinto a la Quebrada seca que ya conocés de Jujuy.",
-  tags: ["Senderismo", "Cascadas cercanas", "Calilegua", "Avistaje de aves"],
-  address: "San Francisco, Valle Grande, Jujuy",
-  note: "Te enviamos la ubicación exacta por WhatsApp",
-  /** TODO(contenido): reemplazar por las coordenadas reales del hospedaje. */
-  coordinates: { lat: -23.6207, lng: -64.9515 },
+  cardTitle: "Dos horas de ruta 83, atravesando la selva",
+  body: "Se llega por la ruta 83, atravesando el Parque Nacional Calilegua: unas dos horas desde la ruta principal. El camino de montaña es parte del viaje — conviene hacerlo de día y con tiempo.",
+  tags: ["Ruta 83", "Parque Nacional Calilegua", "Termas del Río Jordán", "Cascada La Toma"],
+  note: "Escribinos por WhatsApp y te pasamos la ubicación exacta y el estado del camino",
 } as const;
 
 export const contact = {
   eyebrow: "Contacto directo",
   title: "¿Vamos coordinando tu estadía?",
-  body: "Escribinos por WhatsApp y te contamos disponibilidad, precios y todo lo que necesites saber. Respondemos todos los días.",
+  body: "No tomamos reservas online: escribinos por WhatsApp y te contamos disponibilidad, precios y todo lo que necesites saber.",
   ctaLabel: "Escribir a Tía Carola por WhatsApp",
-  ctaHint: "Respuesta rápida, sin formularios",
+  ctaHint: "Respuesta directa de Lucy y Freddy",
 } as const;
 
-/** TODO(contenido): completar cuando existan las cuentas. */
 export const social = {
-  instagram: null as string | null,
-  facebook: null as string | null,
+  instagram: "https://instagram.com/tia.carola",
+  instagramHandle: "@tia.carola",
+  facebook: "https://facebook.com/tiacarolajujuy",
+  facebookHandle: "Tía Carola",
 } as const;
 
 export const footer = {
   about:
-    "Hospedaje rural familiar en las Yungas jujeñas. Naturaleza, descanso e historia real en San Francisco, Valle Grande.",
+    "Hospedaje rural familiar en las Yungas jujeñas. Naturaleza, descanso e historia real en San Francisco, Valle Grande, desde 1996.",
 } as const;

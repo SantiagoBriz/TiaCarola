@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
-/* Paleta del hospedaje: cremas y verdes de las Yungas, con terracota como
-   color de accion. El diseno es deliberadamente claro y calido, asi que no
-   hay variante oscura. */
+/* Paleta del hospedaje.
+   Los verdes de las Yungas son el color dominante: nav, botones, titulos,
+   fondos oscuros. La terracota quedo como acento puntual, casi siempre
+   ligada a WhatsApp, que es el unico canal de contacto real. */
 @theme {
-  --color-crema: #f5eddd;
-  --color-crema-2: #efe2c8;
-  --color-terracota: #c1622d;
-  --color-terracota-2: #a8501f;
+  /* Verdes, de mas oscuro a mas claro. */
+  --color-verde-900: #16301d;
   --color-verde-oscuro: #1f3b27;
   --color-verde-medio: #2f4a34;
+  --color-verde-600: #466141;
   --color-salvia: #7c9473;
+  --color-salvia-clara: #a8bb9f;
+
+  /* Fondos calidos. */
+  --color-crema: #f5eddd;
+  --color-crema-2: #efe2c8;
+
+  /* Acento. Uso restringido: CTA de contacto y detalles chicos. */
+  --color-terracota: #c1622d;
+  --color-terracota-2: #a8501f;
+
+  /* Texto. */
   --color-tinta: #3b2a20;
   --color-tinta-suave: #6b5947;
 

@@ -1,7 +1,8 @@
 import { footer, nav, site, social } from "@/content/site";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { buildWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/whatsapp";
 
 const anio = new Date().getFullYear();
+const linkClase = "mb-2.5 block text-sm text-[#b9c4ac] transition-colors hover:text-white";
 
 export function Footer() {
   return (
@@ -12,6 +13,9 @@ export function Footer() {
             <span aria-hidden="true">🌿</span> {site.name}
           </p>
           <p className="max-w-xs text-sm leading-[1.7] text-[#b9c4ac]">{footer.about}</p>
+          <address className="mt-4 text-sm leading-[1.7] text-[#b9c4ac] not-italic">
+            {site.address}
+          </address>
         </div>
 
         <nav aria-label="Secciones del sitio">
@@ -19,10 +23,7 @@ export function Footer() {
           <ul>
             {nav.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="mb-2.5 block text-sm text-[#b9c4ac] transition-colors hover:text-white"
-                >
+                <a href={item.href} className={linkClase}>
                   {item.label}
                 </a>
               </li>
@@ -38,43 +39,37 @@ export function Footer() {
                 href={buildWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-2.5 block text-sm text-[#b9c4ac] transition-colors hover:text-white"
+                className={linkClase}
               >
-                WhatsApp
+                WhatsApp {WHATSAPP_DISPLAY}
               </a>
             </li>
-            {/* Las redes se muestran solo si existen: un link muerto es peor
-                que no tener el link. */}
-            {social.instagram ? (
-              <li>
-                <a
-                  href={social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mb-2.5 block text-sm text-[#b9c4ac] transition-colors hover:text-white"
-                >
-                  Instagram
-                </a>
-              </li>
-            ) : null}
-            {social.facebook ? (
-              <li>
-                <a
-                  href={social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mb-2.5 block text-sm text-[#b9c4ac] transition-colors hover:text-white"
-                >
-                  Facebook
-                </a>
-              </li>
-            ) : null}
+            <li>
+              <a
+                href={social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClase}
+              >
+                Instagram {social.instagramHandle}
+              </a>
+            </li>
+            <li>
+              <a
+                href={social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkClase}
+              >
+                Facebook {social.facebookHandle}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       <p className="mx-auto mt-6 max-w-[1140px] text-center text-[13px] text-[#94a186]">
-        © {anio} {site.name} · {site.tagline} · {site.location}
+        © {anio} {site.name} · {site.tagline} · Desde {site.foundedYear}
       </p>
     </footer>
   );

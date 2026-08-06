@@ -14,19 +14,25 @@ export function Testimonials() {
           {testimonials.items.map((testimonial) => (
             <li
               key={testimonial.author}
-              className="border-terracota rounded-2xl border-l-4 bg-white p-7 shadow-[0_6px_20px_rgba(59,42,32,0.05)]"
+              className="border-salvia rounded-2xl border-l-4 bg-white p-7 shadow-[0_6px_20px_rgba(31,59,39,0.06)]"
             >
-              {/* Las estrellas son decorativas: el dato accesible es el texto. */}
-              <p className="text-verde-oscuro mb-3 tracking-[2px]" aria-hidden="true">
-                {"★".repeat(testimonial.rating)}
-              </p>
-              <p className="sr-only">{testimonial.rating} de 5 estrellas</p>
-
-              <blockquote className="text-tinta mb-4 text-[15px] leading-relaxed italic">
-                “{testimonial.quote}”
-              </blockquote>
-              <p className="text-verde-oscuro text-sm font-bold">{testimonial.author}</p>
-              <p className="text-tinta-suave text-[12.5px]">{testimonial.from}</p>
+              <figure>
+                <blockquote className="text-tinta mb-4 text-[15px] leading-relaxed italic">
+                  “{testimonial.quote}”
+                </blockquote>
+                <figcaption>
+                  <span className="text-verde-oscuro block text-sm font-bold">
+                    {testimonial.author}
+                  </span>
+                  <span className="text-tinta-suave block text-[12.5px]">
+                    {[testimonial.from, testimonial.date].filter(Boolean).join(" · ")}
+                  </span>
+                  {/* Decir de donde salio la resena: son publicas, no propias. */}
+                  <span className="text-salvia mt-1 block text-[11.5px] font-bold uppercase">
+                    vía {testimonial.source}
+                  </span>
+                </figcaption>
+              </figure>
             </li>
           ))}
         </ul>

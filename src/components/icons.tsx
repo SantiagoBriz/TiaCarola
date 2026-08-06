@@ -17,20 +17,22 @@ const paths: Record<ServiceIconName, React.ReactNode> = {
   corazon: (
     <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
   ),
+  fuego: (
+    <path d="M12 2s4 4.5 4 8a4 4 0 0 1-8 0c0-1.2.5-2.3 1-3 0 1.5.8 2.3 1.5 2.3S12 8.5 12 7c0-1.6 0-3.4 0-5zM6 20h12" />
+  ),
   ubicacion: (
     <>
       <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
     </>
   ),
-  casa: (
+  ropa: <path d="M3 12h18M3 6h18M3 18h18" />,
+  arbol: (
     <>
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-      <path d="M9 22V12h6v10" />
+      <path d="M12 2 6.5 10h3L5 17h14l-4.5-7h3z" />
+      <path d="M12 17v5" />
     </>
   ),
-  ropa: <path d="M3 12h18M3 6h18M3 18h18" />,
-  estrella: <path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" />,
 };
 
 /** Iconos de servicios. Decorativos: el significado lo da el texto al lado. */

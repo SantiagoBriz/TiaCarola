@@ -1,14 +1,11 @@
-import { location } from "@/content/site";
+import { location, site } from "@/content/site";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Reveal } from "./Reveal";
+import { RouteMap } from "./RouteMap";
 import { SectionHead } from "./SectionHead";
 
-const { lat, lng } = location.coordinates;
-// OpenStreetMap en vez de Google Maps: no necesita API key ni cuenta, y no
-// mete cookies de terceros en el sitio.
-const mapSrc =
-  `https://www.openstreetmap.org/export/embed.html` +
-  `?bbox=${lng - 0.1}%2C${lat - 0.06}%2C${lng + 0.1}%2C${lat + 0.06}` +
-  `&layer=mapnik&marker=${lat}%2C${lng}`;
+const MENSAJE =
+  "¡Hola! Escribo desde la página de Tía Carola. Quería consultar cómo llegar y el estado del camino.";
 
 export function Location() {
   return (
@@ -19,12 +16,7 @@ export function Location() {
 
       <Reveal>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <iframe
-            src={mapSrc}
-            loading="lazy"
-            title={`Mapa de ${location.address}`}
-            className="h-[420px] w-full rounded-2xl border-0"
-          />
+          <RouteMap />
 
           <div className="bg-verde-oscuro flex flex-col justify-between rounded-2xl p-8 text-[#f3e9d8]">
             <div>
@@ -43,14 +35,22 @@ export function Location() {
               </ul>
             </div>
 
-            <div className="space-y-2 text-sm">
+            <address className="space-y-3 text-sm not-italic">
               <p>
-                <span aria-hidden="true">📍</span> {location.address}
+                <span aria-hidden="true">📍</span> {site.address}
               </p>
+              <p className="text-[13px] text-[#b9c4ac]">{site.addressDetail}</p>
               <p>
-                <span aria-hidden="true">💬</span> {location.note}
+                <a
+                  href={buildWhatsAppUrl(MENSAJE)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
+                >
+                  <span aria-hidden="true">💬</span> {location.note}
+                </a>
               </p>
-            </div>
+            </address>
           </div>
         </div>
       </Reveal>

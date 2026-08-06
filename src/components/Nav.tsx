@@ -17,7 +17,7 @@ export function Nav() {
   return (
     <header
       className={`bg-crema/85 sticky top-0 z-50 backdrop-blur transition-shadow ${
-        scrolled ? "shadow-[0_2px_14px_rgba(59,42,32,0.08)]" : ""
+        scrolled ? "shadow-[0_2px_14px_rgba(31,59,39,0.12)]" : ""
       }`}
     >
       <nav
@@ -33,7 +33,7 @@ export function Nav() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="text-tinta hover:text-terracota text-sm font-medium transition-colors"
+                className="text-tinta hover:text-verde-600 text-sm font-medium transition-colors"
               >
                 {item.label}
               </a>
@@ -45,7 +45,7 @@ export function Nav() {
           href={buildWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-terracota hover:bg-terracota-2 rounded-full px-4 py-2.5 text-xs font-bold whitespace-nowrap text-white transition-colors"
+          className="bg-verde-oscuro hover:bg-verde-medio rounded-full px-4 py-2.5 text-xs font-bold whitespace-nowrap text-white transition-colors"
         >
           Escribinos por WhatsApp
         </a>

@@ -1,11 +1,15 @@
 import { stats } from "@/content/site";
 import { Reveal } from "./Reveal";
 
+/**
+ * Va despues de la historia, no pegada al hero: lo primero que se lee al bajar
+ * tiene que ser el relato de como empezo la casa, no un tablero de numeros.
+ */
 export function Stats() {
   return (
-    <div className="relative z-10 mx-auto -mt-12 max-w-[1140px] px-6">
+    <div className="mx-auto max-w-[1140px] px-6">
       <Reveal>
-        <dl className="flex flex-col justify-between gap-5 rounded-2xl bg-white px-10 py-8 shadow-[0_12px_32px_rgba(59,42,32,0.12)] sm:flex-row">
+        <dl className="flex flex-col justify-between gap-6 rounded-2xl bg-white px-10 py-8 shadow-[0_12px_32px_rgba(31,59,39,0.10)] sm:flex-row">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <dd className="font-display text-verde-oscuro text-3xl">{stat.value}</dd>

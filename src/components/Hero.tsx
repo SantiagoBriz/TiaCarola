@@ -20,11 +20,11 @@ export function Hero() {
           suficiente sin importar como sea la foto que se cargue. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/75"
+        className="from-verde-900/10 to-verde-900/85 absolute inset-0 bg-gradient-to-b"
       />
 
       <div className="relative mx-auto w-full max-w-[1140px] px-6 py-14">
-        <p className="mb-3.5 text-xs font-bold tracking-[0.16em] text-[#EAD9B4] uppercase">
+        <p className="text-salvia-clara mb-3.5 text-xs font-bold tracking-[0.16em] uppercase">
           {hero.eyebrow}
         </p>
         <h1 className="font-display max-w-2xl text-4xl leading-[1.08] text-white sm:text-5xl lg:text-[54px]">
@@ -37,9 +37,9 @@ export function Hero() {
             href={buildWhatsAppUrl(MENSAJE_INICIAL)}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-terracota hover:bg-terracota-2 inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold text-white transition-colors"
+            className="bg-verde-oscuro hover:bg-verde-medio inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-bold text-white transition-colors"
           >
-            Consultar disponibilidad <span aria-hidden="true">→</span>
+            Consultar por WhatsApp <span aria-hidden="true">→</span>
           </a>
           <a
             href="#historia"
