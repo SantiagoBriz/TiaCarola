@@ -1,0 +1,10 @@
+.next
+node_modules
+out
+build
+package-lock.json
+next-env.d.ts
+
+# La documentacion se escribe a mano; Prettier reformatea las tablas y ensucia
+# los diffs sin aportar nada.
+*.md
