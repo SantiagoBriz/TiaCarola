@@ -1,11 +1,7 @@
 import { location, site } from "@/content/site";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { Reveal } from "./Reveal";
 import { RouteMap } from "./RouteMap";
 import { SectionHead } from "./SectionHead";
-
-const MENSAJE =
-  "¡Hola! Escribo desde la página de Tía Carola. Quería consultar cómo llegar y el estado del camino.";
 
 export function Location() {
   return (
@@ -33,23 +29,22 @@ export function Location() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mb-6 rounded-xl bg-white/10 p-4">
+                <h4 className="mb-1.5 text-sm font-bold text-white">
+                  <span aria-hidden="true">🚌</span> {location.transporte.title}
+                </h4>
+                <p className="text-[13.5px] leading-[1.6] text-[#dfe4d3]">
+                  {location.transporte.body}
+                </p>
+              </div>
             </div>
 
-            <address className="space-y-3 text-sm not-italic">
+            <address className="space-y-2 text-sm not-italic">
               <p>
                 <span aria-hidden="true">📍</span> {site.address}
               </p>
               <p className="text-[13px] text-[#b9c4ac]">{site.addressDetail}</p>
-              <p>
-                <a
-                  href={buildWhatsAppUrl(MENSAJE)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
-                >
-                  <span aria-hidden="true">💬</span> {location.note}
-                </a>
-              </p>
             </address>
           </div>
         </div>

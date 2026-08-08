@@ -58,9 +58,9 @@ export const site = {
   address: "El Churqui s/n, San Francisco, Valle Grande, Jujuy",
   addressDetail: "Dentro del predio municipal, frente a la antena de telefonía móvil.",
   foundedYear: 1996,
-  owners: "Lucy Sánchez y Freddy Vera",
+  owners: "Lucy Sánchez y Fredy Vera",
   description:
-    "Hospedaje familiar en San Francisco, Valle Grande, Jujuy. Atendido por Lucy y Freddy desde 1996.",
+    "Hospedaje familiar en San Francisco, Valle Grande, Jujuy. Atendido por Lucy y Fredy desde 1996.",
 } as const;
 
 export const nav = [
@@ -73,9 +73,9 @@ export const nav = [
 
 export const hero = {
   eyebrow: "San Francisco, Valle Grande · Yungas jujeñas · Desde 1996",
-  title: "Un hogar en medio de la selva, con el trato de siempre",
+  title: "Una experiencia única en las Yungas jujeñas",
   subtitle:
-    "Desde 1996, Lucy y Freddy reciben viajeros en su casa de adobe, entre la neblina y el verde profundo de las Yungas.",
+    "Con más de 30 años de experiencia, Lucy y Fredy reciben turistas de todo el mundo en su pintoresco alojamiento.",
   photo: {
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1800&auto=format&fit=crop",
     alt: "Río entre la vegetación densa de las Yungas",
@@ -95,13 +95,13 @@ export const stats = [
  */
 export const story = {
   eyebrow: "Nuestra historia",
-  title: "La casa que Lucy y Freddy abrieron al camino",
-  subtitle: "Tres momentos que explican por qué venir a Tía Carola se siente distinto.",
+  title: "La casa de Lucy y Fredy",
+  subtitle: "Porque Tía Carola es el mejor lugar para conectar con la naturaleza y con uno mismo.",
   chapters: [
     {
       eyebrow: "Los comienzos",
       title: "Vinieron a pasear y se quedaron para siempre",
-      body: "En 1996, Lucy Sánchez —docente jubilada— y Freddy Vera —ex mecánico dental— llegaron de paseo a San Francisco. En un mes ya eran dueños del terreno donde hoy está la casa.",
+      body: "En 1996, Lucy Sánchez —docente jubilada— y Fredy Vera —ex mecánico dental— llegaron de paseo a San Francisco. En un mes ya eran dueños del terreno donde hoy está la casa.",
       quote: {
         text: "Nosotros vinimos a pasear y conocer cuando me jubilé, en el año 96. Llegamos y a los 15 días volvimos, y a los 30 días éramos propietarios de este terreno porque el dueño quiso venderlo por un gasto que tenía que cubrir en ese momento.",
         author: "Lucy Sánchez",
@@ -112,7 +112,7 @@ export const story = {
       },
     },
     {
-      eyebrow: "La cocina de la casa",
+      eyebrow: "La vida en Tía Carola",
       title: "Comida casera en medio de la selva",
       body: "La casa de adobe original conserva el horno de barro, y de esa cocina salen los platos que los viajeros recuerdan años después.",
       quote: {
@@ -167,7 +167,7 @@ export const services = {
     },
     {
       icon: "corazon",
-      title: "Atención de Lucy y Freddy",
+      title: "Atención de Lucy y Fredy",
       description: "Los dueños te reciben en persona, como en casa.",
     },
     {
@@ -317,7 +317,12 @@ export const location = {
   cardTitle: "Dos horas de ruta 83, atravesando la selva",
   body: "Se llega por la ruta 83, atravesando el Parque Nacional Calilegua: unas dos horas desde la ruta principal. El camino de montaña es parte del viaje — conviene hacerlo de día y con tiempo.",
   tags: ["Ruta 83", "Parque Nacional Calilegua", "Termas del Río Jordán", "Cascada La Toma"],
-  note: "Escribinos por WhatsApp y te pasamos la ubicación exacta y el estado del camino",
+  /** Como llegar sin auto propio. */
+  transporte: {
+    title: "En colectivo desde Ledesma",
+    body: "Suben dos empresas desde Ledesma, 24 de Septiembre y 23 de Agosto. Ambas salen a las 8 de la mañana.",
+    // TODO(contenido): falta el telefono o contacto de las empresas.
+  },
 } as const;
 
 export const contact = {
@@ -325,7 +330,7 @@ export const contact = {
   title: "¿Vamos coordinando tu estadía?",
   body: "No tomamos reservas online: escribinos por WhatsApp y te contamos disponibilidad, precios y todo lo que necesites saber.",
   ctaLabel: "Escribir a Tía Carola por WhatsApp",
-  ctaHint: "Respuesta directa de Lucy y Freddy",
+  ctaHint: "Respuesta directa de Lucy y Fredy",
 } as const;
 
 export const social = {
