@@ -77,8 +77,8 @@ export const hero = {
   subtitle:
     "Con más de 30 años de experiencia, Lucy y Fredy reciben turistas de todo el mundo en su pintoresco alojamiento.",
   photo: {
-    src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1800&auto=format&fit=crop",
-    alt: "Río entre la vegetación densa de las Yungas",
+    src: "/fotos/galeria-atardecer.jpg",
+    alt: "La galería de Tía Carola al atardecer, con guirnaldas de luces encendidas, una mesa de madera pintada de rojo y las montañas de las Yungas al fondo",
   },
 } satisfies { eyebrow: string; title: string; subtitle: string; photo: Photo };
 
@@ -107,8 +107,8 @@ export const story = {
         author: "Lucy Sánchez",
       },
       photo: {
-        src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
-        alt: "Casa familiar rodeada de vegetación",
+        src: "/fotos/primera-foto.jpg",
+        alt: "Una de las primeras fotos en Tía Carola: Lucy y Fredy sentados a la mesa, bajo un cartel de madera que dice «Mi rancho». Arriba, escrito a mano: «Una de las primeras fotos en Tía Carola… ¡somos felices!»",
       },
     },
     {
@@ -120,8 +120,8 @@ export const story = {
         author: "Marcelo C., Buenos Aires",
       },
       photo: {
-        src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=900&auto=format&fit=crop",
-        alt: "Mesa servida con comida casera",
+        src: "/fotos/fogon-de-noche.jpg",
+        alt: "Fredy junto al fogón circular de la casa, de noche, con las llamas encendidas bajo la parrilla y las luces del pueblo a lo lejos",
       },
     },
     {
@@ -133,8 +133,8 @@ export const story = {
         author: "Lucy Sánchez",
       },
       photo: {
-        src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=900&auto=format&fit=crop",
-        alt: "Habitación cálida con detalles de madera",
+        src: "/fotos/lucy-y-fredy-entrada.jpg",
+        alt: "Lucy y Fredy abrazados en la entrada de Tía Carola, junto al cartel del alojamiento, con el cerro de fondo",
       },
       signature: "Con cariño, Tía Carola",
     },
@@ -198,32 +198,28 @@ export const gallery = {
   title: "Momentos para inspirarte",
   photos: [
     {
-      src: "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=900&auto=format&fit=crop",
-      alt: "Habitación con luz natural",
+      src: "/fotos/yungas-nubes.jpg",
+      alt: "El cerro cubierto de selva frente a San Francisco, con las nubes bajando sobre la ladera",
     },
     {
-      src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=700&auto=format&fit=crop",
-      alt: "Comida casera servida en la mesa",
+      src: "/fotos/galeria-reposera.jpg",
+      alt: "Fredy sentado en una reposera de lona bajo la galería, con la luz de la tarde entrando entre las columnas de madera",
     },
     {
-      src: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=700&auto=format&fit=crop",
-      alt: "Selva de montaña al amanecer",
+      src: "/fotos/entrada-de-noche.jpg",
+      alt: "La entrada de Tía Carola de noche, con el camino de piedra iluminado y el cartel del alojamiento",
     },
     {
-      src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=700&auto=format&fit=crop",
-      alt: "Río entre la vegetación",
+      src: "/fotos/galeria-vista-pueblo.jpg",
+      alt: "Vista desde la galería hacia el pueblo y los cerros, al caer la tarde",
     },
     {
-      src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=900&auto=format&fit=crop",
-      alt: "Galería con vista a la selva",
+      src: "/fotos/lucy-y-fredy-jardin.jpg",
+      alt: "Lucy y Fredy en el jardín, a contraluz, con las montañas de las Yungas detrás",
     },
     {
-      src: "https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?q=80&w=700&auto=format&fit=crop",
-      alt: "Niebla entre los árboles",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
-      alt: "Casa entre la vegetación",
+      src: "/fotos/cielo-estrellado.jpg",
+      alt: "El cielo estrellado sobre San Francisco, con la antena de telefonía que sirve de referencia para llegar",
     },
   ],
 } satisfies { eyebrow: string; title: string; photos: Photo[] };

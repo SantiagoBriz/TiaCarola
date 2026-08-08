@@ -10,11 +10,10 @@ import { SectionHead } from "./SectionHead";
  */
 const spans = [
   "sm:col-span-2 sm:row-span-2",
-  "sm:col-span-1 sm:row-span-1",
-  "sm:col-span-1 sm:row-span-1",
   "sm:col-span-1 sm:row-span-2",
-  "sm:col-span-2 sm:row-span-1",
   "sm:col-span-1 sm:row-span-1",
+  "sm:col-span-1 sm:row-span-1",
+  "sm:col-span-2 sm:row-span-1",
   "sm:col-span-2 sm:row-span-1",
 ];
 

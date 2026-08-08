@@ -31,7 +31,7 @@ export function Story() {
                 </div>
 
                 <div>
-                  <p className="font-display text-salvia mb-2.5 text-[15px] font-semibold">
+                  <p className="font-display text-verde-600 mb-2.5 text-[15px] font-semibold">
                     {chapter.eyebrow}
                   </p>
                   <h3 className="font-display text-verde-oscuro mb-3.5 text-2xl">

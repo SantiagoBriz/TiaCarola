@@ -28,7 +28,7 @@ export function Testimonials() {
                     {[testimonial.from, testimonial.date].filter(Boolean).join(" · ")}
                   </span>
                   {/* Decir de donde salio la resena: son publicas, no propias. */}
-                  <span className="text-salvia mt-1 block text-[11.5px] font-bold uppercase">
+                  <span className="text-verde-600 mt-1 block text-[11.5px] font-bold uppercase">
                     vía {testimonial.source}
                   </span>
                 </figcaption>
