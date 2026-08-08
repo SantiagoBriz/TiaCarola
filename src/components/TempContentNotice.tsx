@@ -11,9 +11,9 @@ export function TempContentNotice() {
   return (
     <div className="bg-verde-900 text-salvia-clara px-6 py-2.5 text-center text-[13px]">
       <p className="mx-auto max-w-[1140px]">
-        <strong className="font-bold text-white">Versión de trabajo.</strong> Las fotos son de
-        muestra y los testimonios provienen de reseñas públicas de TripAdvisor. Se reemplazan por
-        material propio antes de publicar.
+        <strong className="font-bold text-white">Versión de trabajo.</strong> Las fotos del
+        hospedaje ya son propias. Faltan las de la sección «Qué hacer», que siguen siendo de
+        muestra, y los testimonios provienen de reseñas públicas de TripAdvisor.
       </p>
     </div>
   );
