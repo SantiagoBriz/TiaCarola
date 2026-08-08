@@ -310,8 +310,8 @@ export const testimonials = {
 export const location = {
   eyebrow: "Cómo llegar",
   title: "San Francisco, Valle Grande",
-  cardTitle: "Dos horas de ruta 83, atravesando la selva",
-  body: "Se llega por la ruta 83, atravesando el Parque Nacional Calilegua: unas dos horas desde la ruta principal. El camino de montaña es parte del viaje — conviene hacerlo de día y con tiempo.",
+  cardTitle: "Desde San Salvador, por la 34 y la 83",
+  body: "Se sale de San Salvador por la ruta 34, pasando San Pedro y el Puente San Lorenzo. En Libertador General San Martín empieza la ruta 83, que atraviesa el Parque Nacional Calilegua: unas dos horas de camino de montaña hasta San Francisco. Conviene hacerlo de día — en época de lluvias puede haber derrumbes.",
   tags: ["Ruta 83", "Parque Nacional Calilegua", "Termas del Río Jordán", "Cascada La Toma"],
   /** Como llegar sin auto propio. */
   transporte: {

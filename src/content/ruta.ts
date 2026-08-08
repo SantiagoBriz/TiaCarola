@@ -1,6 +1,12 @@
 /**
  * Puntos de referencia del camino hasta el hospedaje.
  *
+ * El recorrido arranca en San Salvador de Jujuy, que es de donde sale casi
+ * todo el mundo: ruta 34 pasando San Pedro y el Puente San Lorenzo, y desde
+ * Libertador General San Martin la ruta provincial 83, que atraviesa el
+ * Parque Nacional Calilegua hasta San Francisco.
+ * Fuente del recorrido: nota de Seguime Jujuy sobre Tia Carola (12/05/2022).
+ *
  * ⚠️ TODO(contenido): las coordenadas son APROXIMADAS, sacadas de la
  * ubicacion general de cada localidad. Sirven para que el mapa se entienda,
  * pero NO para navegar. Antes de publicar hay que reemplazarlas por las
@@ -20,30 +26,38 @@ export type PuntoDeRuta = {
 
 export const puntosDeRuta: PuntoDeRuta[] = [
   {
+    id: "san-salvador",
+    nombre: "San Salvador de Jujuy",
+    detalle: "Punto de partida habitual. Se toma la ruta 34 hacia el este.",
+    lat: -24.1858,
+    lng: -65.2995,
+  },
+  {
+    id: "san-pedro",
+    nombre: "San Pedro de Jujuy",
+    detalle: "Sobre la ruta 34. Después viene el Puente San Lorenzo.",
+    lat: -24.2294,
+    lng: -64.868,
+  },
+  {
     id: "libertador",
     nombre: "Libertador Gral. San Martín",
-    detalle: "Desde acá se toma la ruta provincial 83. Última estación de servicio del camino.",
+    detalle: "Acá se deja la 34 y empieza la ruta provincial 83. Última estación de servicio.",
     lat: -23.809,
     lng: -64.79,
   },
   {
     id: "calilegua",
     nombre: "Parque Nacional Calilegua",
-    detalle: "La ruta 83 lo atraviesa. Selva de montaña, curvas y mucha vegetación.",
+    detalle: "La ruta 83 lo atraviesa. Camino de cornisa, curvas y selva de montaña.",
     lat: -23.7386,
     lng: -64.8536,
   },
   {
-    id: "valle-grande",
-    nombre: "Valle Grande",
-    detalle: "Cabecera del departamento, ya en pleno corazón de las Yungas.",
-    lat: -23.4747,
-    lng: -64.95,
-  },
-  {
     id: "san-francisco",
     nombre: "San Francisco",
-    detalle: "El pueblo. Aproximadamente 2 horas desde la ruta principal.",
+    detalle:
+      "Unas 2 horas de montaña desde la ruta principal. Conviene hacerlo de día: en época de lluvias puede haber derrumbes.",
     lat: -23.6167,
     lng: -64.9333,
   },
@@ -57,8 +71,11 @@ export const puntosDeRuta: PuntoDeRuta[] = [
   },
 ];
 
-/** Trazado aproximado de la ruta 83, solo para dar la idea del recorrido. */
+/** Trazado aproximado del recorrido, solo para dar la idea del camino. */
 export const trazadoRuta83: [number, number][] = [
+  [-24.1858, -65.2995],
+  [-24.2294, -64.868],
+  [-24.0, -64.82],
   [-23.809, -64.79],
   [-23.78, -64.82],
   [-23.7386, -64.8536],
