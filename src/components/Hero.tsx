@@ -43,7 +43,7 @@ export function Hero() {
           </a>
           <a
             href="#historia"
-            className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-[15px] font-bold text-white transition-colors hover:bg-white/20"
+            className="hover:border-terracota hover:bg-terracota inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-[15px] font-bold text-white transition-colors"
           >
             Conocé nuestra historia
           </a>
