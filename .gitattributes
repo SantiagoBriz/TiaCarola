@@ -1,0 +1,17 @@
+# Fin de linea LF en el repo y tambien en el arbol de trabajo.
+#
+# Sin esto, Git en Windows materializa los archivos con CRLF y Prettier
+# —que espera LF— marca el repo entero como mal formateado despues de cada
+# cambio de rama. En el runner de CI, que es Linux, pasaba en verde: la
+# verificacion local y la del CI daban distinto.
+* text=auto eol=lf
+
+# Binarios: que Git no los toque.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.zip binary
