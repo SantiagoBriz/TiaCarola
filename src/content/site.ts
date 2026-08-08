@@ -40,7 +40,22 @@ export type StoryChapter = {
 export type Activity = {
   title: string;
   description: string;
-  photo: Photo;
+  /**
+   * Opcional a proposito: de las Termas del Rio Jordan y la Cascada La Toma
+   * no hay fotos propias ni con licencia libre. Sin foto, la tarjeta se
+   * dibuja como bloque de texto en vez de mostrar una imagen de otro lugar.
+   */
+  photo?: Photo;
+  /**
+   * Credito de la foto. Obligatorio cuando la imagen no es propia: las
+   * licencias Creative Commons exigen nombrar al autor y la licencia.
+   */
+  credit?: {
+    author: string;
+    license: string;
+    licenseUrl: string;
+    sourceUrl: string;
+  };
 };
 
 export type Testimonial = {
@@ -230,36 +245,43 @@ export const activities = {
   subtitle: "Aventura, naturaleza y cultura a pocos minutos del hospedaje.",
   items: [
     {
-      title: "Termas del Río Jordán",
-      description: "Piscinas naturales de aguas turquesas.",
+      title: "Pueblo de San Francisco",
+      description: "La vida cotidiana de un pueblo de las Yungas, a pasos de la casa.",
       photo: {
-        src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop",
-        alt: "Piscinas naturales de aguas turquesas",
+        src: "/fotos/pueblo-san-francisco.jpg",
+        alt: "El pueblo de San Francisco visto entre la vegetación, rodeado por los cerros de las Yungas",
+      },
+      credit: {
+        author: "Manela87",
+        license: "CC BY-SA 4.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/deed.es",
+        sourceUrl: "https://commons.wikimedia.org/wiki/File:San_Francisco,_Jujuy.jpg",
       },
     },
     {
       title: "Parque Nacional Calilegua",
-      description: "Selva de montaña y biodiversidad única.",
+      description: "Selva de montaña y biodiversidad única. Se atraviesa al venir por la ruta 83.",
       photo: {
-        src: "https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?q=80&w=800&auto=format&fit=crop",
-        alt: "Selva de montaña cubierta de niebla",
+        src: "/fotos/parque-calilegua.jpg",
+        alt: "Vista panorámica del valle del río San Lorenzo en el Parque Nacional Calilegua",
+      },
+      credit: {
+        author: "Laurent (WikiLaurent)",
+        license: "CC BY-SA 3.0",
+        licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/deed.es",
+        sourceUrl:
+          "https://commons.wikimedia.org/wiki/File:Calilegua_National_Park_-_View_of_San_Lorenzo_Rio.JPG",
       },
     },
     {
+      // TODO(contenido): falta foto propia o con licencia libre.
+      title: "Termas del Río Jordán",
+      description: "Piscinas naturales de aguas turquesas, entre las paredes del cañón.",
+    },
+    {
+      // TODO(contenido): falta foto propia o con licencia libre.
       title: "Cascada La Toma",
-      description: "Una caminata corta hasta el salto de agua.",
-      photo: {
-        src: "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=800&auto=format&fit=crop",
-        alt: "Sendero de montaña entre la vegetación",
-      },
-    },
-    {
-      title: "Pueblo de San Francisco",
-      description: "La vida cotidiana de un pueblo de las Yungas.",
-      photo: {
-        src: "https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=800&auto=format&fit=crop",
-        alt: "Ave posada en una rama",
-      },
+      description: "Una caminata corta desde el pueblo hasta el salto de agua.",
     },
   ],
 } satisfies {
