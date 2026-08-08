@@ -10,7 +10,7 @@ export function Contact() {
   return (
     <div className="mx-auto max-w-[1140px] px-6">
       <Reveal>
-        <section className="bg-crema-2 rounded-[28px] px-6 py-20 text-center sm:py-24">
+        <section className="bg-superficie rounded-[28px] px-6 py-20 text-center sm:py-24">
           <p className="text-salvia mb-2.5 text-xs font-bold tracking-[0.16em] uppercase">
             {contact.eyebrow}
           </p>

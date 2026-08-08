@@ -80,7 +80,7 @@ export function RouteMap() {
   return (
     <div>
       {error ? (
-        <div className="bg-crema-2 text-tinta-suave flex h-[420px] w-full items-center justify-center rounded-2xl px-6 text-center text-sm">
+        <div className="bg-superficie text-tinta-suave flex h-[420px] w-full items-center justify-center rounded-2xl px-6 text-center text-sm">
           No se pudo cargar el mapa. Abajo está el detalle del camino, punto por punto.
         </div>
       ) : (
@@ -102,7 +102,7 @@ export function RouteMap() {
               onClick={() => setSeleccionado(punto)}
               aria-pressed={seleccionado?.id === punto.id}
               className={`flex w-full items-start gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
-                seleccionado?.id === punto.id ? "bg-crema-2" : "hover:bg-crema-2/60"
+                seleccionado?.id === punto.id ? "bg-superficie" : "hover:bg-superficie/60"
               }`}
             >
               <span

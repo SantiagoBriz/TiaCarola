@@ -15,7 +15,7 @@ export function Services() {
           {services.items.map((service) => (
             <li
               key={service.title}
-              className="bg-crema-2 rounded-2xl p-6 transition duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-[0_10px_24px_rgba(59,42,32,0.08)]"
+              className="bg-superficie rounded-2xl p-6 transition duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-[0_10px_24px_rgba(59,42,32,0.08)]"
             >
               <div className="text-verde-oscuro mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white">
                 <ServiceIcon name={service.icon} />

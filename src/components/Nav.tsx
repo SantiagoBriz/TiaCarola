@@ -16,7 +16,7 @@ export function Nav() {
 
   return (
     <header
-      className={`bg-crema/85 sticky top-0 z-50 backdrop-blur transition-shadow ${
+      className={`bg-fondo/85 sticky top-0 z-50 backdrop-blur transition-shadow ${
         scrolled ? "shadow-[0_2px_14px_rgba(31,59,39,0.12)]" : ""
       }`}
     >

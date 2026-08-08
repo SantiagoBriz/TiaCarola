@@ -13,9 +13,11 @@
   --color-salvia: #7c9473;
   --color-salvia-clara: #a8bb9f;
 
-  /* Fondos calidos. */
-  --color-crema: #f5eddd;
-  --color-crema-2: #efe2c8;
+  /* Fondos. El de pagina es un verde muy palido; las superficies elevadas
+     (tarjetas, bloques destacados) van MAS claras que el fondo, para que se
+     despeguen sin necesidad de bordes. */
+  --color-fondo: #edf1e8;
+  --color-superficie: #f7f9f4;
 
   /* Acento. Uso restringido: CTA de contacto y detalles chicos. */
   --color-terracota: #c1622d;
@@ -39,7 +41,7 @@ html {
 }
 
 body {
-  background: var(--color-crema);
+  background: var(--color-fondo);
   color: var(--color-tinta);
 }
 
