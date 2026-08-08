@@ -120,7 +120,7 @@ export const story = {
         author: "Marcelo C., Buenos Aires",
       },
       photo: {
-        src: "https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=900&auto=format&fit=crop",
+        src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=900&auto=format&fit=crop",
         alt: "Mesa servida con comida casera",
       },
     },
@@ -202,7 +202,7 @@ export const gallery = {
       alt: "Habitación con luz natural",
     },
     {
-      src: "https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=700&auto=format&fit=crop",
+      src: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=700&auto=format&fit=crop",
       alt: "Comida casera servida en la mesa",
     },
     {
