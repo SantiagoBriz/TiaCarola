@@ -13,11 +13,13 @@
   --color-salvia: #7c9473;
   --color-salvia-clara: #a8bb9f;
 
-  /* Fondos. El de pagina es un verde muy palido; las superficies elevadas
-     (tarjetas, bloques destacados) van MAS claras que el fondo, para que se
-     despeguen sin necesidad de bordes. */
-  --color-fondo: #edf1e8;
-  --color-superficie: #f7f9f4;
+  /* Fondos. El de pagina es un verde claro pero con saturacion suficiente
+     para leerse como verde: el valor anterior (#EDF1E8) tenia solo 9 puntos
+     de diferencia entre el canal verde y el azul, y a simple vista pasaba por
+     blanco roto. Las superficies elevadas (tarjetas, bloques destacados) van
+     MAS claras que el fondo, para que se despeguen sin necesidad de bordes. */
+  --color-fondo: #d6e5c7;
+  --color-superficie: #f0f6e9;
 
   /* Acento. Uso restringido: CTA de contacto y detalles chicos. */
   --color-terracota: #c1622d;

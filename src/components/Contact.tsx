@@ -11,7 +11,7 @@ export function Contact() {
     <div className="mx-auto max-w-[1140px] px-6">
       <Reveal>
         <section className="bg-superficie rounded-[28px] px-6 py-20 text-center sm:py-24">
-          <p className="text-salvia mb-2.5 text-xs font-bold tracking-[0.16em] uppercase">
+          <p className="text-verde-600 mb-2.5 text-xs font-bold tracking-[0.16em] uppercase">
             {contact.eyebrow}
           </p>
           <h2 className="font-display text-verde-oscuro mb-3.5 text-3xl sm:text-4xl">
